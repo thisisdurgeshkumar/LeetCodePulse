@@ -1,0 +1,101 @@
+    <title>LeetCodePulse</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Welcome Section -->
+
+    <div class="welcome-section">
+
+        <h3 class="welcome-text">
+            Hey 👋! LeetCode User 👤
+        </h3>
+
+        <p class="welcome-subtext">
+            Track your LeetCode progress at a glance.
+        </p>
+
+    </div>
+
+    <div class="container">
+
+        <h1>LeetCodePulse</h1>
+
+        <div class="user-container">
+
+            <p>Enter Your Username below :</p>
+
+            <div class="user-input-container">
+
+                <div class="input-wrapper">
+
+                    <input
+                        type="text"
+                        placeholder="Enter Username Here !"
+                        id="user-input"
+                    >
+
+                    <button id="clear-button" type="button">
+                        ×
+                    </button>
+
+                    <span class="input-tooltip">
+                        Enter your LeetCode username
+                    </span>
+
+                </div>
+                <button id="search-button">
+                    Search
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Stats should be INSIDE container -->
+
+        <div class="stats-container">
+
+            <div class="progress">
+
+                <div class="progress-item">
+
+                    <div class="easy-progress circle">
+                        <span id="easy-level"></span>
+                        Easy
+                    </div>
+
+                </div>
+                <div class="progress-item">
+
+                    <div class="medium-progress circle">
+                        <span id="medium-level"></span>
+                        Medium
+                    </div>
+
+                </div>
+                <div class="progress-item">
+
+                    <div class="hard-progress circle">
+                        <span id="hard-level"></span>
+                        Hard
+                    </div>
+
+                </div>
+                <div class="stats-card">
+                    <!-- JS will add cards here -->
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

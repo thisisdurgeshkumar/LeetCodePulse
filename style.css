@@ -1,0 +1,432 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    background-color: rgb(39, 59, 59);
+    color: white;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+/* ================================
+   Welcome Section
+================================ */
+
+.welcome-section {
+    text-align: center;
+    width: 100%;
+    padding: 5px 20px;
+}
+
+.welcome-text {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+
+    cursor: default;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease,
+        text-shadow 0.3s ease;
+}
+
+.welcome-subtext {
+    color: #d0d0d0;
+    font-size: 0.95rem;
+    margin-top: 5px;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* Welcome Hover Effect */
+
+.welcome-section:hover .welcome-text {
+    color: #2995fd;
+
+    transform: translateY(-2px);
+
+    text-shadow: 0 0 10px rgba(41, 149, 253, 0.5);
+}
+
+.welcome-section:hover .welcome-subtext {
+    color: white;
+
+    transform: translateY(-1px);
+}
+
+
+/* ================================
+   Main Container
+================================ */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    background-color: gray;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    width: 50%;
+    max-width: 600px;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Container Hover Effect */
+
+.container:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 25px rgba(129, 4, 4, 0.35);
+}
+
+
+/* Container Touch / Press Effect */
+
+.container:active {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+h1 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+
+/* ================================
+   User Section
+================================ */
+
+.user-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: start;
+}
+
+.user-input-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+
+/* ================================
+   Input Wrapper
+================================ */
+
+.input-wrapper {
+    position: relative;
+    width: 80%;
+}
+
+
+/* Username Input */
+
+#user-input {
+    width: 100%;
+
+    padding: 0.6rem 2.5rem 0.6rem 0.6rem;
+
+    border-radius: 5px;
+    border: none;
+    outline: none;
+
+    font-size: 1rem;
+}
+
+
+/* ================================
+   Clear Button
+================================ */
+
+#clear-button {
+    position: absolute;
+
+    right: 8px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border: none;
+    background: transparent;
+
+    color: gray;
+
+    font-size: 1.4rem;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    display: none;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+#clear-button:hover {
+    color: red;
+
+    transform: translateY(-50%) scale(1.15);
+}
+
+
+/* ================================
+   Username Tooltip
+================================ */
+
+.input-tooltip {
+    position: absolute;
+
+    left: 0;
+    top: calc(100% + 8px);
+
+    background-color: #22354e;
+    color: white;
+
+    padding: 6px 10px;
+
+    border-radius: 5px;
+
+    font-size: 14px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    white-space: nowrap;
+
+    transition: 0.2s ease;
+
+    z-index: 10;
+}
+
+
+/* Show Tooltip on Hover */
+
+.input-wrapper:hover .input-tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* ================================
+   Search Button
+================================ */
+
+#search-button {
+    padding: 0.6rem 1rem;
+
+    border-radius: 5px;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+#search-button:hover {
+    background-color: #2995fd;
+    color: white;
+}
+
+#search-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+
+/* ================================
+   Statistics
+================================ */
+
+.stats-container {
+    width: 100%;
+}
+
+.progress {
+    display: flex;
+
+    flex-direction: row;
+
+    justify-content: space-evenly;
+
+    flex-wrap: wrap;
+
+    gap: 20px;
+}
+
+.progress-item {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* ================================
+   Progress Circles
+================================ */
+
+.circle {
+    width: 120px;
+    height: 120px;
+
+    border-radius: 50%;
+
+    border: 4px solid #2995fd;
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 1rem;
+
+    color: white;
+
+    font-weight: bold;
+
+    background: conic-gradient(
+        #2995fd var(--progress-degree, 0%),
+        #22354e 0%
+    );
+}
+
+.circle span {
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 1.2rem;
+
+    margin-bottom: 5px;
+}
+
+
+/* ================================
+   Statistics Cards
+================================ */
+
+.stats-card {
+    width: 100%;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.stats-card-item {
+    background-color: #22354e;
+
+    padding: 15px;
+
+    border-radius: 8px;
+
+    min-width: 120px;
+
+    text-align: center;
+}
+
+.stats-card-item h3 {
+    font-size: 14px;
+
+    margin-bottom: 8px;
+}
+
+.stats-card-item p {
+    font-size: 18px;
+
+    font-weight: bold;
+}
+
+
+/* ================================
+   Mobile Responsive
+================================ */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 90%;
+
+        padding: 15px;
+    }
+
+    .welcome-section {
+        padding: 5px 15px;
+    }
+
+    .welcome-text {
+        font-size: 1.2rem;
+    }
+
+    .welcome-subtext {
+        font-size: 0.85rem;
+    }
+
+    .user-input-container {
+        flex-direction: column;
+    }
+
+    .input-wrapper {
+        width: 100%;
+    }
+
+    #user-input {
+        width: 100%;
+    }
+
+    #search-button {
+        width: 100%;
+    }
+
+    .circle {
+        width: 100px;
+        height: 100px;
+    }
+
+    .stats-card-item {
+        min-width: 100px;
+    }
+}
